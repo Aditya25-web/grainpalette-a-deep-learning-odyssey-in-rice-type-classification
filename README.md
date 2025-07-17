@@ -1,5 +1,4 @@
-🌾 GrainPalette
-
+# 🌾 GrainPalette
 A Deep Learning Odyssey in Rice Type Classification using Transfer Learning 🚀
 GrainPalette is an intelligent rice grain classifier that leverages the power of deep learning and transfer learning (MobileNetV2) to identify different rice types with high accuracy. It simplifies the process of rice variety recognition using computer vision.
 
