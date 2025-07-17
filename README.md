@@ -64,18 +64,18 @@ Deployment	GitHub
 bash
 Copy
 Edit
-# Step 1: Clone the repository
+Step 1: Clone the repository
 git clone https://github.com/Aditya25-web/grainpalette-a-deep-learning-odyssey-in-rice-type-classification.git
 cd grainpalette*
 
-# Step 2: Create and activate virtual environment
+Step 2: Create and activate virtual environment
 python -m venv venv
 venv\Scripts\activate  # On Windows
 
-# Step 3: Install dependencies
+Step 3: Install dependencies
 pip install -r requirements.txt
 
-# Step 4: Run the app
+Step 4: Run the app
 python app.py
 Then open your browser and go to:
 👉 http://localhost:5000
