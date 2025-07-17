@@ -1,130 +1,94 @@
-🌾 GrainPalette: Rice Type Classification
-A deep learning web application that classifies rice grain images into five types using CNN with MobileNetV2 transfer learning.
+🌾 GrainPalette
 
-🎯 Features
-Deep Learning Classification: Uses CNN with MobileNetV2 transfer learning
-5 Rice Types: Arborio, Basmati, Ipsala, Jasmine, Karacadag
-Web Interface: User-friendly Flask web application
-Real-time Prediction: Upload images and get instant results
-Confidence Scores: Detailed prediction probabilities
-Responsive Design: Works on desktop and mobile devices
-🚀 Quick Start
-1. Clone the Repository
-```bash git clone cd grainpalette-rice-classifier ```
+A Deep Learning Odyssey in Rice Type Classification using Transfer Learning 🚀
+GrainPalette is an intelligent rice grain classifier that leverages the power of deep learning and transfer learning (MobileNetV2) to identify different rice types with high accuracy. It simplifies the process of rice variety recognition using computer vision.
 
-2. Set Up Environment
-```bash python scripts/setup_environment.py ```
+📸 Preview
+Upload a rice grain image → Get instant prediction with confidence levels and visual insights!
+Accurate. Fast. Smart. ✅
 
-📊 Dataset Setup
-Option 1: Kaggle Notebook (Recommended)
-Create a new Kaggle notebook
-Add the Rice Image Dataset:
-Go to "Add Data" → "Datasets"
-Search for "Rice Image Dataset" by muratkokludataset
-Add it to your notebook
-Upload the kaggle_notebook_training.py script
-Run the training script in the notebook
-Option 2: Local Setup with Kaggle API
-Install Kaggle API: ```bash pip install kaggle ```
+🔍 Features
+🌾 Classifies 5 rice varieties: Basmati, Arborio, Ipsala, Jasmine, and Karacadag
 
-Set up Kaggle credentials:
+🤖 Built using MobileNetV2 + Transfer Learning
 
-Go to https://www.kaggle.com/account
-Click "Create New API Token"
-Download kaggle.json
-Place it in ~/.kaggle/kaggle.json
-Run: chmod 600 ~/.kaggle/kaggle.json
-Run the training script: ```bash python train_model.py ``` The script will automatically download the dataset.
+📊 Live confidence pie chart using Plotly
 
-Option 3: Manual Download
-Visit: https://www.kaggle.com/datasets/muratkokludataset/rice-image-dataset
-Download and extract to rice_dataset/ folder
-Ensure structure: ``` rice_dataset/ ├── Arborio/ ├── Basmati/ ├── Ipsala/ ├── Jasmine/ └── Karacadag/ ```
-4. Train the Model
-```bash python train_model.py ```
+💡 Clean, responsive web UI (Flask + Bootstrap)
 
-5. Run the Web Application
-```bash python app.py ```
+📂 Upload any rice image & get instant prediction
 
-Visit http://localhost:5000 to use the application!
+❌ Handles non-rice inputs gracefully
 
-📊 Training Options
-Kaggle Notebook Training (Recommended)
-Free GPU access for faster training
-Pre-installed libraries and dependencies
-Easy dataset access without downloads
-Shareable results and visualizations
-Use kaggle_notebook_training.py for the best Kaggle experience with:
+🧠 Model Highlights
+Parameter	Value
+Base Model	MobileNetV2
+Accuracy (Validation)	✅ ~96%
+Loss Function	Categorical CrossEntropy
+Optimizer	Adam
+Trainable Params	~2.2 Million
 
-Dataset exploration and visualization
-Comprehensive data augmentation
-Advanced model evaluation
-Training progress visualization
-Local Training
-Use train_model.py for local development with automatic dataset download via Kaggle API.
+📈 The model shows steady accuracy improvement and minimal overfitting (see Training Graphs below).
 
-📊 Model Architecture
-Base Model: MobileNetV2 (pre-trained on ImageNet)
-Transfer Learning: Frozen base layers + custom classification head
-Input Size: 224x224x3
-Output: 5 classes with softmax activation
-Optimization: Adam optimizer with learning rate scheduling
-🛠️ Technology Stack
-Component	Technology
-Deep Learning	TensorFlow, Keras
-Web Framework	Flask
-Frontend	HTML, CSS, JavaScript
-Image Processing	PIL, NumPy
-Visualization	Matplotlib
-📁 Project Structure
-``` grainpalette-rice-classifier/ ├── app.py # Flask web application ├── train_model.py # Model training script ├── requirements.txt # Python dependencies ├── README.md # Project documentation ├── static/ │ ├── style.css # CSS styles │ └── uploads/ # Uploaded images ├── templates/ │ ├── index.html # Home page │ ├── result.html # Results page │ └── about.html # About page ├── scripts/ │ └── setup_environment.py # Setup script └── rice_dataset/ # Dataset (to be downloaded) ├── Arborio/ ├── Basmati/ ├── Ipsala/ ├── Jasmine/ └── Karacadag/ ```
+📊 Training Graphs
+📈 Accuracy
 
-🎯 Use Cases
-Farmers: Identify seed types before cultivation
-Agricultural Scientists: Validate crop classification
-Educators: Teaching tool for agricultural studies
-Food Industry: Quality control and grain sorting
-Researchers: Rice variety analysis
-📈 Model Performance
-The model achieves high accuracy through:
 
-Transfer learning from ImageNet
-Data augmentation for robustness
-Fine-tuning for domain adaptation
-Comprehensive validation
-🔧 Configuration
-Key parameters in train_model.py:
+📉 Loss
+Loss decreases consistently across epochs.
 
-IMG_SIZE: Input image dimensions (224, 224)
-BATCH_SIZE: Training batch size (32)
-EPOCHS: Training epochs (20)
-LEARNING_RATE: Initial learning rate (0.0001)
-🚀 Deployment Options
-Local Development
-```bash python app.py ```
+🗃️ Dataset
+Rice grain image dataset with over 200+ images per class:
 
-Production Deployment
-Heroku: Use provided requirements.txt
-Docker: Create Dockerfile for containerization
-Cloud Platforms: Deploy on AWS, GCP, or Azure
-🤝 Contributing
-Fork the repository
-Create a feature branch
-Make your changes
-Add tests if applicable
-Submit a pull request
-📄 License
-This project is open source and available under the MIT License.
+Basmati
 
-🙏 Acknowledgments
-Rice Image Dataset from Kaggle
-TensorFlow and Keras teams
-MobileNetV2 architecture
-Flask web framework
-📞 Support
-If you encounter any issues:
+Arborio
 
-Check the troubleshooting section
-Review the setup instructions
-Open an issue on GitHub
-Happy Rice Classification! 🌾
+Ipsala
+
+Jasmine
+
+Karacadag
+
+Data split: Training, Validation, and Testing sets.
+
+🧰 Tech Stack
+Layer	Technology
+Frontend	HTML, CSS, Bootstrap
+Backend	Flask (Python)
+ML Model	MobileNetV2 (Keras, TensorFlow)
+Image Utils	OpenCV, Pillow
+Graphs	Matplotlib, Plotly
+Deployment	GitHub
+
+🚀 How to Run Locally
+bash
+Copy
+Edit
+# Step 1: Clone the repository
+git clone https://github.com/Aditya25-web/grainpalette-a-deep-learning-odyssey-in-rice-type-classification.git
+cd grainpalette*
+
+# Step 2: Create and activate virtual environment
+python -m venv venv
+venv\Scripts\activate  # On Windows
+
+# Step 3: Install dependencies
+pip install -r requirements.txt
+
+# Step 4: Run the app
+python app.py
+Then open your browser and go to:
+👉 http://localhost:5000
+
+👨‍💻 Contributors
+Aditya Kunchala – Lead Developer
+
+🌱 Future Scope
+Add more rice varieties 🌾
+
+Improve UI with more interactivity 🎨
+
+Integrate API or mobile version 📱
+
+Export predictions to PDF 📄
